@@ -15,5 +15,11 @@ app.use(cors());
 app.use('/api/items', require('./routes/itemRoutes')); // Item Routes
 app.use('/api/auth', require('./routes/authRoutes')); // Authentication Routes
 
+app.get('/' , (req,res)=>{
+   res.send("home route");
+})
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
