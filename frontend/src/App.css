@@ -1,0 +1,493 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f211f;
+  padding: 10px 20px;
+  color: white;
+}
+
+.logo img {
+  height: 40px;
+  border-radius: 3px;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.admin-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.admin-btn:hover {
+  background-color: #219150;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #2c3e50;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* General Styling */
+.menu-container {
+  text-align: center;
+  padding: 30px 15px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.menu-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: #34495e;
+}
+
+.filter-btn.active {
+  background: #27ae60;
+}
+
+/* Menu List */
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Individual Menu Item */
+.menu-item {
+  display: flex;
+  flex-direction: co;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+}
+
+.menu-item  li p{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+
+}
+
+.menu-item h2 {
+  color: #000000;
+}
+
+/* Availability Icons */
+.menu-item p:last-child {
+  font-size: 18px;
+}
+
+.menu-item p:last-child strong {
+  margin-right: 5px;
+}
+
+/* Green tick for available, red cross for unavailable */
+.menu-item p:last-child::after {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filter-buttons {
+    flex-wrap: wrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+  }
+
+  .menu-list {
+    grid-template-columns: 1fr;
+  }
+  .menu-item{
+    height: 100px;
+    flex-direction: column;
+  }
+}
+
+
+.login-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: white;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-container  button:hover {
+  background-color: darkgreen;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+/* Admin Dashboard Styles */
+.admin-dashboard {
+  padding: 20px;
+  text-align: center;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.item-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow:  2px 4px 6px 2px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: left;
+  position: relative;
+}
+
+.item-card h3 {
+  margin: 5px 0;
+}
+
+.item-card p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.available {
+  color: green;
+  font-weight: bold;
+}
+
+.not-available {
+  color: red;
+  font-weight: bold;
+}
+
+.edit-btn, .delete-btn {
+  padding: 6px 10px;
+  margin-top: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.edit-btn {
+  background: #007bff;
+  color: white;
+  margin-right: 5px;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+/* Floating Add Button */
+.add-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn:hover {
+  background: #218838;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-content input, .modal-content label {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.save-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.close-btn {
+  background: gray;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Close (Cross) Button */
+.close-btn {
+  position: absolute;
+  width: 40px;
+  top: 0px;
+  right: 0px;
+  font-size: 30px;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #dc3545;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #28a745;
+}
+
+/* Properly Aligned Checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.save-btn {
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #28a745;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+}
+
+
