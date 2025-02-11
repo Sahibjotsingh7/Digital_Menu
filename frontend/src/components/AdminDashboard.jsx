@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
   const fetchItems = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/items/");
+      const response = await axios.get("https://digital-menu-02y6.onrender.com/api/items/");
       setItems(response.data);
     } catch (error) {
       console.error("Error fetching items:", error);
@@ -29,12 +29,12 @@ const AdminDashboard = () => {
       const token = localStorage.getItem("adminToken");
       if (editItem) {
         // Update item
-        await axios.put(`http://localhost:5000/api/items/update/${editItem._id}`, newItem, {
+        await axios.put(`https://digital-menu-02y6.onrender.com/api/items/update/${editItem._id}`, newItem, {
           headers: { Authorization: `Bearer ${token}` },
         });
       } else {
         // Add new item
-        const response = await axios.post("http://localhost:5000/api/items/add", newItem, {
+        const response = await axios.post("https://digital-menu-02y6.onrender.com/api/items/add", newItem, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setItems([...items, response.data.item]);
@@ -52,7 +52,7 @@ const AdminDashboard = () => {
   const handleDeleteItem = async (id) => {
     try {
       const token = localStorage.getItem("adminToken");
-      await axios.delete(`http://localhost:5000/api/items/delete/${id}`, {
+      await axios.delete(`https://digital-menu-02y6.onrender.com/api/items/delete/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setItems(items.filter((item) => item._id !== id));

@@ -12,7 +12,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/items");
+        const response = await axios.get("https://digital-menu-02y6.onrender.com/api/items");
         setItems(response.data);
         setFilteredItems(response.data);
       } catch (error) {

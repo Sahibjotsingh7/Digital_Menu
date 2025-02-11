@@ -17,7 +17,7 @@ const AdminLogin = () => {
     setError(""); // Reset error message
 
     try {  
-      const response = await axios.post("http://localhost:5000/api/auth/admin/login", credentials);
+      const response = await axios.post("https://digital-menu-02y6.onrender.com/api/auth/admin/login", credentials);
       localStorage.setItem("adminToken", response.data.token); // Store token
       navigate("/admin/dashboard"); 
     } catch (err) {
